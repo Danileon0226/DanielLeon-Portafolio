@@ -72,136 +72,131 @@ function Home() {
   return (
     <>
       <Navbar />
-      <Box
-        sx={{
-          flexGrow: 1,
-          p: 3,
-          pt: 8,
-          marginTop: "110px",
-        }}
-        className="fondo-box"
+      <Paper
+        elevation={3}
+        sx={{ p: 3, mb: 5, marginTop: "110px" }}
+        className="fondo-paper"
       >
-        <Paper elevation={3} sx={{ p: 3, mb: 5 }} className="fondo-paper">
-          <Grid container spacing={3} alignItems="center">
-            <Grid item xs={12} sm={6}>
-              <Box
-                className="fondo-box2"
-                display="flex"
-                flexDirection="column"
-                justifyContent="center"
-                height="100%"
+        <Grid container spacing={3} alignItems="center">
+          <Grid item xs={12} sm={6}>
+            <Box
+              className="fondo-box2"
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              height="100%"
+            >
+              <Typography
+                variant={isSmallScreen ? "h4" : "h2"}
+                component="h1"
+                gutterBottom
+                sx={{
+                  color: "var(--text-color)",
+                  fontWeight: "bold",
+                  position: "relative",
+                  overflow: "hidden",
+                  "&::after": {
+                    content: '""',
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "2px",
+                    backgroundColor: "currentcolor",
+                    animation: "slideIn 3s infinite",
+                  },
+                  "@keyframes slideIn": {
+                    from: { transform: "scaleX(0)", transformOrigin: "left" },
+                    to: { transform: "scaleX(1)", transformOrigin: "left" },
+                    "50%": {
+                      transform: "scaleX(1)",
+                      transformOrigin: "right",
+                    },
+                    "100%": {
+                      transform: "scaleX(0)",
+                      transformOrigin: "right",
+                    },
+                  },
+                }}
+                className="title"
               >
-                <Typography
-                  variant={isSmallScreen ? "h4" : "h2"}
-                  component="h1"
-                  gutterBottom
+                Desarrollador {words[index]}
+              </Typography>
+              <Typography
+                variant="h5"
+                component="h2"
+                gutterBottom
+                sx={{
+                  color: "var(--text-color)",
+                  fontWeight: "bold",
+                }}
+              >
+                <i className="ri-reactjs-fill"></i> React Front End{" "}
+                <i className="ri-reactjs-fill"></i>
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ mt: 2, mb: 2, color: "var(--text-color)" }}
+              >
+                Apasionado por crear soluciones digitales innovadoras. Con
+                experiencia en React, MUI, Remix Icon, y mucho más.{" "}
+                <i className="ri-html5-line"></i>
+                <i className="ri-css3-line"></i>
+                <i className="ri-javascript-line"></i>
+                <i className="ri-git-branch-line"></i>
+              </Typography>
+              <Stack direction="row" spacing={2}>
+                <Button
+                  variant="contained"
                   sx={{
+                    backgroundColor: "var(--link-color)",
+                  }}
+                  component={RouterLink}
+                  to="/AboutMe"
+                >
+                  Conoce más sobre mí
+                </Button>
+                <Button
+                  variant="outlined"
+                  startIcon={<span className="ri-code-line"></span>}
+                  component="a"
+                  href="https://github.com/Danileon0226"
+                  target="_blank"
+                  sx={{
+                    color: "var(--link-color)",
+                  }}
+                >
+                  Mira mi código
+                </Button>
+              </Stack>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Box display="flex" justifyContent="center">
+              <Stack alignItems="center" spacing={2}>
+                <Avatar alt="Daniel León" src={Daniel} sx={avatarStyle} />
+                <Typography
+                  variant="body1"
+                  sx={{
+                    ...textStyle,
                     color: "var(--text-color)",
                     fontWeight: "bold",
-                    position: "relative",
-                    overflow: "hidden",
-                    "&::after": {
-                      content: '""',
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "2px",
-                      backgroundColor: "currentcolor",
-                      animation: "slideIn 3s infinite",
-                    },
-                    "@keyframes slideIn": {
-                      from: { transform: "scaleX(0)", transformOrigin: "left" },
-                      to: { transform: "scaleX(1)", transformOrigin: "left" },
-                      "50%": {
-                        transform: "scaleX(1)",
-                        transformOrigin: "right",
-                      },
-                      "100%": {
-                        transform: "scaleX(0)",
-                        transformOrigin: "right",
-                      },
-                    },
-                  }}
-                  className="title"
-                >
-                  Desarrollador {words[index]}
-                </Typography>
-                <Typography
-                  variant="h5"
-                  component="h2"
-                  gutterBottom
-                  sx={{
-                    color: "var(--text-color)",
-                    fontWeight: "bold",
                   }}
                 >
-                  <i className="ri-reactjs-fill"></i> React Front End{" "}
-                  <i className="ri-reactjs-fill"></i>
+                  Daniel Alejandro Salgado León
                 </Typography>
                 <Typography
                   variant="body1"
-                  sx={{ mt: 2, mb: 2, color: "var(--text-color)" }}
+                  sx={{ ...textStyle, color: "var(--subtitle-color)" }}
                 >
-                  Apasionado por crear soluciones digitales innovadoras. Con
-                  experiencia en React, MUI, Remix Icon, y mucho más.{" "}
-                  <i className="ri-html5-line"></i>
-                  <i className="ri-css3-line"></i>
-                  <i className="ri-javascript-line"></i>
-                  <i className="ri-git-branch-line"></i>
+                  2 Años y 6 Meses de experiencia.
                 </Typography>
-                <Stack direction="row" spacing={2}>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: "var(--link-color)",
-                    }}
-                    component={RouterLink}
-                    to="/about"
-                  >
-                    Conoce más sobre mí
-                  </Button>
-                  <Button
-                    variant="outlined"
-                    startIcon={<span className="ri-code-line"></span>}
-                    component="a"
-                    href="https://github.com/danielleon"
-                    target="_blank"
-                    sx={{
-                      color: "var(--link-color)",
-                    }}
-                  >
-                    Mira mi código
-                  </Button>
-                </Stack>
-              </Box>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Box display="flex" justifyContent="center">
-                <Stack alignItems="center" spacing={2}>
-                  <Avatar alt="Daniel León" src={Daniel} sx={avatarStyle} />
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      ...textStyle,
-                      color: "var(--text-color)",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Daniel Alejandro Salgado León
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{ ...textStyle, color: "var(--subtitle-color)" }}
-                  >
-                    2 Años y 6 Meses de experiencia.
-                  </Typography>
-                </Stack>
-              </Box>
-            </Grid>
+              </Stack>
+            </Box>
           </Grid>
-        </Paper>
-      </Box>
+        </Grid>
+      </Paper>
+
       <MyWorks />
       <WppBoton />
       <MyStackTech />

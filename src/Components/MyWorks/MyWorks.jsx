@@ -45,7 +45,7 @@ const HoverCard = styled(Card)(({ theme }) => ({
   }),
   "&:hover": {
     transform: "scale(1.05)",
-    boxShadow: theme.shadows[10], // Ajusta esto según prefieras
+    boxShadow: "var(--link-color)", 
   },
 }));
 

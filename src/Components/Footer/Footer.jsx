@@ -18,6 +18,7 @@ function Footer() {
         backgroundColor: "var(--bg-color)",
         color: "var(--text-color)", 
         borderTop: "1px solid var(--bg-color)", 
+        marginBottom: "100px",
       }}
     >
       <Grid container spacing={2} justifyContent="center">

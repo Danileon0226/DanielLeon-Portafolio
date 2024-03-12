@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Navbar from "../../Components/Navbar/Navbar";
-import PersonalPhoto from "../../assets/Images/daniel.jpg";
+import PersonalPhoto from "../../assets/Images/Foto_hoja_vida.jpg";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
@@ -65,7 +65,7 @@ function AboutMe() {
                       width: theme.spacing(20),
                       height: theme.spacing(20),
                       border: 2,
-                      borderColor: "primary.main",
+                      borderColor: "var(--link-color)",
                     }}
                   />
                 </Box>
@@ -94,7 +94,7 @@ function AboutMe() {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: "var(--subtitle-color)",
+                    color: "var(--text-color)",
                   }}
                 >
                   Soy un desarrollador con pasión por crear soluciones
@@ -121,7 +121,7 @@ function AboutMe() {
               </IconButton>
             ))}
             <a
-              href={`assets/documents/CV-Daniel-Leon.pdf`}
+              href={`../../../public/Documents/CV - Daniel León .pdf`}
               download
               style={{
                 color: "var(--subtitle-color)",

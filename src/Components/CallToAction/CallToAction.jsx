@@ -17,6 +17,10 @@ function CallToAction() {
         margin: theme.spacing(5, 0),
         marginBottom: "110px",
         height: "500px",
+        animation: `${theme.transitions.create(["transform"], {
+          duration: theme.transitions.duration.enteringScreen,
+          easing: theme.transitions.easing.sharp,
+        })}, floatAnimation 3s ease-in-out infinite`,
       }}
     >
       <Typography
@@ -36,15 +40,15 @@ function CallToAction() {
         variant="outlined"
         color="primary"
         sx={{
-          borderColor: theme.palette.primary.main,
+          borderColor: "var(--link-color)",
           color: "var(--link-color)",
           textTransform: "none",
           padding: theme.spacing(1, 4),
           borderRadius: theme.shape.borderRadius,
           ":hover": {
             backgroundColor: "transparent",
-
             color: "var(--link-hover-color)",
+            borderColor: "var(--link-color)",
           },
           fontWeight: "bold",
           fontSize: "1rem",
