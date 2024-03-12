@@ -19,7 +19,6 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import DownloadIcon from "@mui/icons-material/Download";
 import "./AboutMe.css";
-const Url = import.meta.env.VITE_APP_URL;
 
 function AboutMe() {
   const theme = useTheme();
@@ -124,7 +123,7 @@ function AboutMe() {
               </IconButton>
             ))}
             <a
-              href={`${Url}/assets/documents/CV-Daniel-Leon.pdf`}
+              href={`assets/documents/CV-Daniel-Leon.pdf`}
               download
               style={{
                 color: "var(--subtitle-color)",
