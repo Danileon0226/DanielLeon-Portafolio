@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Typography,
@@ -8,7 +7,6 @@ import {
   Card,
   CardContent,
   CardActions,
-  Button,
   useMediaQuery,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
