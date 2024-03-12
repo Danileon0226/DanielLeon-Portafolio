@@ -1,0 +1,15 @@
+.WppBtn{
+    position: fixed;
+    bottom: 90px;
+    right: 15px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #25D366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    z-index: 10;
+}

@@ -1,0 +1,180 @@
+.bottom-nav {
+  display: flex;
+  width: 393px;
+  padding-top: 41px;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 24px;
+  background: var(--bg-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fija el navbar en la parte inferior */
+  bottom: 0; /* Alinea en la parte inferior de la ventana */
+  left: 50%; /* Centra el navbar */
+  transform: translateX(-50%); /* Ajuste fino para centrar exactamente */
+  z-index: 10; /* Asegura que el navbar esté por encima de otros elementos */
+}
+
+.contenedor-logos {
+  display: none;
+}
+
+.li-mobile-p {
+  display: none;
+}
+
+.menu-list {
+  display: flex;
+  padding: 12px 16px;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--bg-color);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menu-5 {
+  width: 135px;
+  height: 5px;
+  margin-top: 10px;
+  align-self: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1 0 auto;
+}
+
+.frame {
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: all 0.3s ease; /* Transición suave para todos los cambios */
+
+  i {
+    color: var(--text-color) !important;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.9s ease; /* Transición para la transformación del ícono */
+  }
+  .li-mobile-p {
+    color: var(--text-color) !important;
+  }
+}
+
+.frame:hover {
+  background-color: var(--link-hover-color);
+
+  i {
+    color: var(--text-color) !important; /* Cambia el color del ícono */
+  }
+
+  .li-mobile-p {
+    color: var(--text-color) !important;
+  }
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .bottom-nav {
+    width: 100%;
+    padding-top: 20px; /* Reducción del padding superior */
+  }
+
+  .menu-list {
+    padding: 8px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .bottom-nav {
+    width: 90%; /* Un poco más estrecho para tablets */
+    padding-top: 30px; /* Ajuste del padding superior */
+    border-radius: 20px; /* Suaviza el radio del borde */
+  }
+
+  .menu-list {
+    justify-content: space-between; /* Espaciado entre elementos */
+  }
+
+  .menu {
+    padding: 5px; /* Ajuste del padding para los elementos del menú */
+  }
+
+  .frame {
+    padding: 6px 10px; /* Ajuste del padding para los frames */
+  }
+}
+
+@media (min-width: 1024px) {
+  .bottom-nav {
+    width: 100%; /* Ajusta el ancho para ocupar toda la pantalla */
+    height: 4%;
+    left: 0; /* Alinea a la izquierda */
+    transform: translateX(
+      0
+    ); /* Elimina la transformación ya que ya no es necesaria */
+    position: fixed; /* Fija el navbar en la parte inferior */
+    top: 0; /* Alinea en la parte inferior de la ventana */
+    left: 50%; /* Centra el navbar */
+    transform: translateX(-50%); /* Ajuste fino para centrar exactamente */
+    z-index: 10; /* Asegura que el navbar esté por encima de otros elementos */
+  }
+
+  .contenedor-logos {
+    display: flex;
+    width: 5%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .li-mobile-p {
+    display: block;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    color: #484c52;
+  }
+
+  .menu-list {
+    padding: 5px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 800px) {
+  .bottom-nav {
+    width: 100%; /* Ajusta el ancho para ocupar toda la pantalla */
+    padding-top: 15px; /* Ajusta el padding superior */
+    border-radius: 10px; /* Suaviza el radio del borde */
+    /* Aquí puedes añadir otros ajustes específicos para este rango de pantalla */
+  }
+
+  .menu-list {
+    padding: 5px; /* Ajusta el padding */
+    /* Otros ajustes para .menu-list */
+  }
+
+  .menu {
+    /* Ajustes para .menu */
+  }
+
+  .frame {
+    padding: 4px 8px; /* Ajusta el padding para los frames */
+    /* Otros ajustes para .frame */
+  }
+
+  /* Ajustes adicionales que puedas necesitar */
+}

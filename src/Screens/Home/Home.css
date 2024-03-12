@@ -1,0 +1,14 @@
+.fondo-paper {
+  background-color: var(--bg-color) !important;
+  width: 100%;
+}
+
+.fondo-box {
+  background-color: transparent;
+  width: 100%;
+}
+
+.title {
+  font-weight: bold;
+  width: 100%;
+}

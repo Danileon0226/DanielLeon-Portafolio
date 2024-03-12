@@ -1,0 +1,35 @@
+.frame {
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: all 0.3s ease; /* Transición suave para todos los cambios */
+  cursor: pointer;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  color: var(--button-text-color);
+  background-color: var(#646cff);
+}
+
+.frame i {
+  color: var(--text-color) !important;
+  width: 30px;
+  height: 30px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.9s ease; /* Transición para la transformación del ícono */
+}Ñ
+
+.frame:hover {
+  background-color: var(--link-hover-color);
+
+  i {
+    color: var(--text-color)!important; 
+    transform: rotate(360deg)!important; 
+  }
+}
