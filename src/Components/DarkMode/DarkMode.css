@@ -9,7 +9,7 @@
   transition: all 0.3s ease; /* Transición suave para todos los cambios */
   cursor: pointer;
   border: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Major Mono Display" !important;
   color: var(--button-text-color);
   background-color: var(#646cff);
 }
@@ -23,13 +23,12 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.9s ease; /* Transición para la transformación del ícono */
-}Ñ
-
-.frame:hover {
+}
+Ñ .frame:hover {
   background-color: var(--link-hover-color);
 
   i {
-    color: var(--text-color)!important; 
-    transform: rotate(360deg)!important; 
+    color: var(--text-color) !important;
+    transform: rotate(360deg) !important;
   }
 }

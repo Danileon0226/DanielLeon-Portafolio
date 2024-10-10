@@ -70,6 +70,7 @@
   }
   .li-mobile-p {
     color: var(--text-color) !important;
+    font-family: "Major Mono Display";
   }
 }
 

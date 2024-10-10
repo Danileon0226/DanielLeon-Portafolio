@@ -34,6 +34,12 @@ function MyStackTech() {
     { name: "Node.js", icon: nodeIcon, color: "#339933", isImage: true },
     { name: "MUI", icon: muiIcon, color: "#007FFF", isImage: true },
     {
+      name: "Next.js",
+      icon: "ri-nextjs-fill",
+      color: "var(--nextjs-color)",
+      isImage: false,
+    },
+    {
       name: "Remix Icons",
       icon: "ri-remixicon-fill",
       color: "#25F4EE",
@@ -43,7 +49,7 @@ function MyStackTech() {
     {
       name: "GitHub",
       icon: "ri-github-fill",
-      color: "#181717",
+      color: "var(--github-color)",
       isImage: false,
     },
   ];
@@ -74,7 +80,11 @@ function MyStackTech() {
         variant="h4"
         gutterBottom
         textAlign="center"
-        sx={{ fontWeight: "bold" }}
+        sx={{
+          fontWeight: "bold",
+          fontFamily: "Major Mono Display",
+          color: "var(--text-color)",
+        }}
       >
         Mi Stack de Tecnología
       </Typography>
@@ -82,7 +92,7 @@ function MyStackTech() {
         {techStack.map((tech) => (
           <Grid item key={tech.name} xs={6} sm={4} md={3} lg={2}>
             <motion.div
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -93,6 +103,8 @@ function MyStackTech() {
                   alignItems: "center",
                   height: "100%",
                   backgroundColor: "var(--bg-color)",
+                  boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)",
+                  borderRadius: "12px",
                 }}
               >
                 <CardContent
@@ -101,12 +113,16 @@ function MyStackTech() {
                     flexDirection: "column",
                     alignItems: "center",
                     gap: 1,
-                    height: "120px",
+                    height: "150px",
                   }}
                 >
                   {renderIcon(tech)}
                   <Typography
-                    sx={{ color: "var(--text-color)", fontWeight: "bold" }}
+                    sx={{
+                      color: "var(--text-color)",
+                      fontWeight: "bold",
+                      fontFamily: "monospace",
+                    }}
                     variant="subtitle1"
                   >
                     {tech.name}

@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Navbar from "../../Components/Navbar/Navbar";
-import PersonalPhoto from "../../assets/Images/Foto_hoja_vida.jpg";
+import Daniel from "../../assets/Images/danielavatar.jpg";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
@@ -60,7 +60,7 @@ function AboutMe() {
                 <Box display="flex" justifyContent="center">
                   <Avatar
                     alt="Daniel Alejandro Salgado León"
-                    src={PersonalPhoto}
+                    src={Daniel}
                     sx={{
                       width: theme.spacing(20),
                       height: theme.spacing(20),
@@ -76,6 +76,7 @@ function AboutMe() {
                   component="div"
                   sx={{
                     color: "var(--text-color)",
+                    fontFamily: "Major Mono Display",
                   }}
                 >
                   ¿Quién soy?
@@ -85,6 +86,7 @@ function AboutMe() {
                   color="text.secondary"
                   sx={{
                     color: "var(--subtitle-color)",
+                    fontFamily: "monospace",
                     fontWeight: "bold",
                   }}
                   gutterBottom
@@ -95,6 +97,7 @@ function AboutMe() {
                   variant="body2"
                   sx={{
                     color: "var(--text-color)",
+                    fontFamily: "monospace",
                   }}
                 >
                   Soy un desarrollador con pasión por crear soluciones

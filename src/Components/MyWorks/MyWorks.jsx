@@ -13,7 +13,6 @@ import Tecnotics from "../../assets/Images/Tecnotics.png";
 import Afw from "../../assets/Images/AFW.png";
 import Eng from "../../assets/Images/EnigLogic.png";
 
-
 const proyectos = [
   {
     id: 1,
@@ -40,27 +39,27 @@ const proyectos = [
 ];
 
 const HoverCard = styled(Card)(({ theme }) => ({
-  transition: theme.transitions.create(["transform", "box-shadow"], {
-    duration: theme.transitions.duration.enteringScreen,
-  }),
+  transition: "transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease",
   "&:hover": {
     transform: "scale(1.05)",
-    boxShadow: "var(--link-color)", 
+    boxShadow: "0 10px 25px rgba(0, 0, 0, 0.15)",
+    opacity: 0.95,
   },
 }));
 
 function MyWorks() {
   return (
-    <Box sx={{ flexGrow: 1, p: 3 }}>
+    <Box sx={{ flexGrow: 1, p: 4, mb: 6 }}>
       <Typography
         variant="h4"
         component="h2"
         gutterBottom
         sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          textAlign: "center",
+          fontFamily: "Major Mono Display",
           fontWeight: "bold",
+          color: "var(--text-color)",
+          marginBottom: "40px",
         }}
       >
         Proyectos Significativos
@@ -71,9 +70,10 @@ function MyWorks() {
             <HoverCard>
               <CardMedia
                 component="img"
-                height="140"
+                height="200"
                 sx={{
                   objectFit: "cover",
+                  borderRadius: "12px 12px 0 0",
                 }}
                 image={proyecto.imagen}
                 alt={proyecto.titulo}
@@ -81,16 +81,18 @@ function MyWorks() {
               <CardContent
                 sx={{
                   backgroundColor: "var(--bg-color)",
-                  height: "60px",
+                  padding: "20px",
+                  textAlign: "center",
                 }}
               >
                 <Typography
-                  gutterBottom
                   variant="h5"
                   component="div"
                   fontWeight="bold"
                   sx={{
                     color: "var(--text-color)",
+                    fontFamily: "Major Mono Display",
+                    marginBottom: "10px",
                   }}
                 >
                   {proyecto.titulo}
@@ -98,9 +100,10 @@ function MyWorks() {
                 <Typography
                   sx={{
                     color: "var(--subtitle-color)",
+                    fontFamily: "monospace",
+                    marginBottom: "15px",
                   }}
                   variant="body2"
-                  color="text.secondary"
                 >
                   {proyecto.descripcion}
                 </Typography>
@@ -108,15 +111,25 @@ function MyWorks() {
               <CardActions
                 sx={{
                   backgroundColor: "var(--bg-color)",
+                  justifyContent: "center",
+                  paddingBottom: "20px",
                 }}
               >
                 <Button
                   variant="contained"
-                  size="small"
+                  size="medium"
                   href={proyecto.enlaceProyecto}
                   target="_blank"
                   sx={{
                     backgroundColor: "var(--link-color)",
+                    color: "white",
+                    fontFamily: "monospace",
+                    fontWeight: "bold",
+                    padding: "8px 16px",
+                    transition: "background-color 0.3s ease",
+                    "&:hover": {
+                      backgroundColor: "var(--link-hover-color)",
+                    },
                   }}
                 >
                   Ver Proyecto

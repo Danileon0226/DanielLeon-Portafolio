@@ -29,8 +29,8 @@ function CallToAction() {
         sx={{
           color: "var(--text-color)",
           marginBottom: theme.spacing(3),
+          fontFamily: "Major Mono Display",
           textAlign: "center",
-          fontWeight: "bold",
           fontSize: matches ? "2.5rem" : "2.25rem",
         }}
       >
@@ -43,6 +43,7 @@ function CallToAction() {
           borderColor: "var(--link-color)",
           color: "var(--link-color)",
           textTransform: "none",
+          fontFamily: "monospace",
           padding: theme.spacing(1, 4),
           borderRadius: theme.shape.borderRadius,
           ":hover": {
@@ -51,7 +52,7 @@ function CallToAction() {
             borderColor: "var(--link-color)",
           },
           fontWeight: "bold",
-          fontSize: "1rem",
+          fontSize: "1.5rem",
         }}
       >
         Contactame

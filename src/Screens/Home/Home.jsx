@@ -7,38 +7,49 @@ import {
   Grid,
   Avatar,
   useMediaQuery,
+  useTheme,
 } from "@mui/material";
-import Navbar from "../../Components/Navbar/Navbar";
-import { useTheme } from "@mui/material/styles";
 import { Link as RouterLink } from "react-router-dom";
-import Daniel from "../../assets/Images/Foto_hoja_vida.jpg";
-import "./Home.css";
+import { useEffect, useState } from "react";
+import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
 import MyWorks from "../../Components/MyWorks/MyWorks";
 import WppBoton from "../../Components/WppBoton/WppBoton";
 import MyStackTech from "../../Components/MyStackTech/MyStackTech";
 import CallToAction from "../../Components/CallToAction/CallToAction";
-import { useEffect, useState } from "react";
-import Footer from "../../Components/Footer/Footer";
+import Daniel from "../../assets/Images/danielavatar.jpg";
+import "./Home.css";
 
 function Home() {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
+  // Estilos reutilizables
   const avatarStyle = {
     width: 200,
     height: 200,
     border: 2,
     borderColor: "var(--link-color)",
+    boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
   };
 
-  // Estilos para los textos
   const textStyle = {
+    fontFamily: "monospace",
     mt: 2,
     mb: 2,
+    color: "var(--text-color)",
+  };
+
+  const buttonStyle = {
+    transition: "all 0.3s ease",
+    fontFamily: "monospace",
+    "&:hover": {
+      transform: "scale(1.05)",
+      boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
+    },
   };
 
   const [index, setIndex] = useState(0);
-
   const words = [
     "Full Stack",
     "Soñador",
@@ -53,7 +64,6 @@ function Home() {
     "Solucionador",
     "Motivador",
     "Diseñador",
-    "Programador",
     "Constructor",
     "Explorador",
     "Pensador",
@@ -64,7 +74,7 @@ function Home() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setIndex((i) => (i + 1) % words.length);
-    }, 3000); // Cambia la palabra cada 3000 milisegundos (3 segundos)
+    }, 3000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -73,14 +83,20 @@ function Home() {
     <>
       <Navbar />
       <Paper
-        elevation={3}
-        sx={{ p: 3, mb: 5, marginTop: "110px" }}
+        elevation={4}
+        sx={{
+          p: 3,
+          mb: 5,
+          marginTop: "110px",
+          background: "rgba(255, 255, 255, 0.8)",
+          backdropFilter: "blur(10px)",
+        }}
         className="fondo-paper"
       >
-        <Grid container spacing={3} alignItems="center">
+        <Grid container spacing={5} alignItems="center">
+          {/* Sección de información personal */}
           <Grid item xs={12} sm={6}>
             <Box
-              className="fondo-box2"
               display="flex"
               flexDirection="column"
               justifyContent="center"
@@ -93,6 +109,7 @@ function Home() {
                 sx={{
                   color: "var(--text-color)",
                   fontWeight: "bold",
+                  fontFamily: "Major Mono Display",
                   position: "relative",
                   overflow: "hidden",
                   "&::after": {
@@ -106,19 +123,13 @@ function Home() {
                     animation: "slideIn 3s infinite",
                   },
                   "@keyframes slideIn": {
-                    from: { transform: "scaleX(0)", transformOrigin: "left" },
-                    to: { transform: "scaleX(1)", transformOrigin: "left" },
-                    "50%": {
-                      transform: "scaleX(1)",
-                      transformOrigin: "right",
-                    },
-                    "100%": {
+                    "0%, 100%": {
                       transform: "scaleX(0)",
-                      transformOrigin: "right",
+                      transformOrigin: "left",
                     },
+                    "50%": { transform: "scaleX(1)", transformOrigin: "right" },
                   },
                 }}
-                className="title"
               >
                 Desarrollador {words[index]}
               </Typography>
@@ -129,28 +140,24 @@ function Home() {
                 sx={{
                   color: "var(--text-color)",
                   fontWeight: "bold",
+                  fontFamily: "Major Mono Display",
                 }}
               >
                 <i className="ri-reactjs-fill"></i> React Front End{" "}
                 <i className="ri-reactjs-fill"></i>
               </Typography>
-              <Typography
-                variant="body1"
-                sx={{ mt: 2, mb: 2, color: "var(--text-color)" }}
-              >
+              <Typography variant="body1" sx={{ ...textStyle }}>
                 Apasionado por crear soluciones digitales innovadoras. Con
                 experiencia en React, MUI, Remix Icon, y mucho más.{" "}
-                <i className="ri-html5-line"></i>
-                <i className="ri-css3-line"></i>
-                <i className="ri-javascript-line"></i>
+                <i className="ri-html5-line"></i>{" "}
+                <i className="ri-css3-line"></i>{" "}
+                <i className="ri-javascript-line"></i>{" "}
                 <i className="ri-git-branch-line"></i>
               </Typography>
               <Stack direction="row" spacing={2}>
                 <Button
                   variant="contained"
-                  sx={{
-                    backgroundColor: "var(--link-color)",
-                  }}
+                  sx={{ backgroundColor: "var(--link-color)", ...buttonStyle }}
                   component={RouterLink}
                   to="/AboutMe"
                 >
@@ -162,15 +169,15 @@ function Home() {
                   component="a"
                   href="https://github.com/Danileon0226"
                   target="_blank"
-                  sx={{
-                    color: "var(--link-color)",
-                  }}
+                  sx={{ color: "var(--link-color)", ...buttonStyle }}
                 >
                   Mira mi código
                 </Button>
               </Stack>
             </Box>
           </Grid>
+
+          {/* Sección del Avatar */}
           <Grid item xs={12} sm={6}>
             <Box display="flex" justifyContent="center">
               <Stack alignItems="center" spacing={2}>
@@ -179,7 +186,6 @@ function Home() {
                   variant="body1"
                   sx={{
                     ...textStyle,
-                    color: "var(--text-color)",
                     fontWeight: "bold",
                   }}
                 >
@@ -187,7 +193,10 @@ function Home() {
                 </Typography>
                 <Typography
                   variant="body1"
-                  sx={{ ...textStyle, color: "var(--subtitle-color)" }}
+                  sx={{
+                    color: "var(--subtitle-color)",
+                    fontFamily: "Major Mono Display",
+                  }}
                 >
                   2 Años y 6 Meses de experiencia.
                 </Typography>
@@ -197,6 +206,7 @@ function Home() {
         </Grid>
       </Paper>
 
+      {/* Componentes adicionales */}
       <MyWorks />
       <WppBoton />
       <MyStackTech />
